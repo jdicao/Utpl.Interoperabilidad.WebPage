@@ -38,5 +38,25 @@ def huespedes():
     responseHabitaciones = requests.get('https://utpl-interoperabilidad-ejercicio1.onrender.com/v1_0/huesped')
     return render_template('huespedes.html', huespedesl=responseHabitaciones.json())
 
+@app.route('/huespedes', methods=['POST'])
+def addHuesped():
+    print("llego por aqui a guardar huespedes")
+
+    nombreValue = request.form.get('nombre')
+    ciudad = request.form.get('ciudad')
+    edad = int(request.form.get('edad'))
+    hab = int(request.form.get('hab'))
+
+    room_data = {
+        "nombre": nombreValue,
+        "ciudad": ciudad,
+        "edad": edad,
+        "hab": hab
+    }
+
+    responseHabitacionesS = requests.post('https://utpl-interoperabilidad-ejercicio1.onrender.com/v1_0/huesped', json=room_data)
+
+    return redirect(url_for('huespedes'))
+
 if __name__ == '__main__':
     app.run(debug=True)

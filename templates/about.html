@@ -1,5 +1,25 @@
 {% extends "layout.html" %}
+
+{% block title %}
+Acerca de Nosotros
+{% endblock %}
+
 {% block content %}
-  <h1>Acerca de</h1>
-  <p>Esta es una aplicación de ejemplo creada con Flask y Bootstrap.</p>
+<div class="row mt-5">
+  <div class="col">
+    <h1>Acerca de Nosotros</h1>
+    <p class="mt-3">Somos una empresa dedicada a brindar la mejor experiencia de hospedaje. Nos esforzamos por ofrecer la mejor atención y comodidad a nuestros huéspedes.</p>
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col">
+    <h2>Contacto</h2>
+    <address class="mt-3">
+      <strong>Dirección:</strong> 123 Calle Principal, Ciudad, Provincia, Código Postal <br>
+      <strong>Teléfono:</strong> (123) 456-7890 <br>
+      <strong>Email:</strong> <a href="mailto:info@nuestraempresa.com">info@nuestraempresa.com</a>
+    </address>
+  </div>
+</div>
 {% endblock %}

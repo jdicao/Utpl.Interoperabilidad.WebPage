@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Lista de Huespedes
+{% endblock %}
+
+{% block content %}
+<h4 class="mt-5">Lista de Huespedes</h4>
+<a  class="btn btn-primary mb-3">Descargar lista de huéspedes</a>
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Habitación</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Ciudad</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in huespedesl %}
+    <tr>
+      <th scope="row">{{ item.id }}</th>
+      <td>{{ item.hab }}</td>
+      <td>{{ item.nombre }}</td>
+      <td>{{ item.edad }}</td>
+      <td>{{ item.ciudad }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -4,17 +4,21 @@
   <table class="table">
     <thead>
       <tr>
+        <th scope="col">Id</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
         <th scope="col">Edad</th>
+        <th scope="col">Identificación</th>
+        <th scope="col">Ciudad</th>
       </tr>
     </thead>
     <tbody>
       {% for persona in personas %}
         <tr>
+          <td><a href="/personas/delete/{{ persona.id }}">{{ persona.id }}</a></td>
           <td>{{ persona.nombre }}</td>
-          <td>{{ persona.apellido }}</td>
           <td>{{ persona.edad }}</td>
+          <td>{{ persona.identificacion }}</td>
+          <td>{{ persona.ciudad }}</td>
         </tr>
       {% endfor %}
     </tbody>
@@ -26,9 +30,14 @@
       <label for="nombre" class="form-label">Nombre</label>
       <input type="text" class="form-control" id="nombre" name="nombre" required>
     </div>
+
     <div class="mb-3">
-      <label for="apellido" class="form-label">Apellido</label>
-      <input type="text" class="form-control" id="apellido" name="apellido" required>
+      <label for="ciudad" class="form-label">Ciudad</label>
+      <input type="text" class="form-control" id="ciudad" name="ciudad" required>
+    </div>
+    <div class="mb-3">
+      <label for="identificacion" class="form-label">Identificación</label>
+      <input type="text" class="form-control" id="identificacion" name="identificacion" required>
     </div>
     <div class="mb-3">
       <label for="edad" class="form-label">Edad</label>

@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 #Declarar el API KEY generado de wso2 api manager desde la aplicacion
 API_KEY = 'eyJ4NXQiOiJPREUzWTJaaE1UQmpNRE00WlRCbU1qQXlZemxpWVRJMllqUmhZVFpsT0dJeVptVXhOV0UzWVE9PSIsImtpZCI6ImdhdGV3YXlfY2VydGlmaWNhdGVfYWxpYXMiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZG1pbkBjYXJib24uc3VwZXIiLCJhcHBsaWNhdGlvbiI6eyJvd25lciI6ImFkbWluIiwidGllclF1b3RhVHlwZSI6bnVsbCwidGllciI6IlVubGltaXRlZCIsIm5hbWUiOiJhcHBfZmVsaXBlIiwiaWQiOjIsInV1aWQiOiI3ZjZkOWIwNi0yYTljLTQ5NDAtOGFmNi04ZTNhMzc2NWNjMmQifSwiaXNzIjoiaHR0cHM6XC9cL3V0cGx3c28yLnRrOjQ0M1wvYXBpbVwvb2F1dGgyXC90b2tlbiIsInRpZXJJbmZvIjp7IlVubGltaXRlZCI6eyJ0aWVyUXVvdGFUeXBlIjoicmVxdWVzdENvdW50IiwiZ3JhcGhRTE1heENvbXBsZXhpdHkiOjAsImdyYXBoUUxNYXhEZXB0aCI6MCwic3RvcE9uUXVvdGFSZWFjaCI6dHJ1ZSwic3Bpa2VBcnJlc3RMaW1pdCI6MCwic3Bpa2VBcnJlc3RVbml0IjpudWxsfX0sImtleXR5cGUiOiJQUk9EVUNUSU9OIiwicGVybWl0dGVkUmVmZXJlciI6IiIsInN1YnNjcmliZWRBUElzIjpbeyJzdWJzY3JpYmVyVGVuYW50RG9tYWluIjoiY2FyYm9uLnN1cGVyIiwibmFtZSI6IlV0cGxQZXJzb25hcyIsImNvbnRleHQiOiJcL2FwaXBlcnNvbmFcLzEuMCIsInB1Ymxpc2hlciI6ImFkbWluIiwidmVyc2lvbiI6IjEuMCIsInN1YnNjcmlwdGlvblRpZXIiOiJVbmxpbWl0ZWQifSx7InN1YnNjcmliZXJUZW5hbnREb21haW4iOiJjYXJib24uc3VwZXIiLCJuYW1lIjoiVXRwbFBlcnNvbmFzIiwiY29udGV4dCI6IlwvYXBpcGVyc29uYVwvMi4wIiwicHVibGlzaGVyIjoiYWRtaW4iLCJ2ZXJzaW9uIjoiMi4wIiwic3Vic2NyaXB0aW9uVGllciI6IlVubGltaXRlZCJ9LHsic3Vic2NyaWJlclRlbmFudERvbWFpbiI6ImNhcmJvbi5zdXBlciIsIm5hbWUiOiJVdHBsUGVyc29uYXMiLCJjb250ZXh0IjoiXC9hcGlwZXJzb25hXC8zLjAiLCJwdWJsaXNoZXIiOiJhZG1pbiIsInZlcnNpb24iOiIzLjAiLCJzdWJzY3JpcHRpb25UaWVyIjoiVW5saW1pdGVkIn1dLCJ0b2tlbl90eXBlIjoiYXBpS2V5IiwicGVybWl0dGVkSVAiOiIiLCJpYXQiOjE2ODk5NTU1MzQsImp0aSI6ImIzYTJkMjc1LTZhMTEtNDc4My1iMTRhLTMwNGU2ZGJhN2U5MCJ9.cNJlok5z2hJjoHlFcCVqR8UWJkEg_hlLjvmvIEGWiCMUWMAvQ7iWaB4uP5dLQ5vfDzFXp4hirbJmkI5eA8LtU_ebfVLCsDZ_9UnpK6-mS2Wlrvw0HyA9YU7bv-C2PvqWuG9IFB4_EqNRzmf2XuTD8QODEvjHkeei9lzwfaglHUURSrjkzF6Yq1VWgeJawbaVw-iljwBRY1JXvlDwpQAWEMKU_-WJZgfJwW5Aw4OQmozI0rQhAhuI6oaaek-1VaeNwdHSlzaBOU4eZQuueAzzbAMdWAHKPByuci1Ca4n6dfDIhQcGyALB_yIIUy_puDYrZZA4x70tFUpjuo_InvTaEQ=='
+API_TOKEN = 'eyJ4NXQiOiJNV0l5TkRJNVlqRTJaV1kxT0RNd01XSTNOR1ptTVRZeU5UTTJOVFZoWlRnMU5UTTNaVE5oTldKbVpERTFPVEE0TldFMVlUaGxNak5sTldFellqSXlZUSIsImtpZCI6Ik1XSXlOREk1WWpFMlpXWTFPRE13TVdJM05HWm1NVFl5TlRNMk5UVmhaVGcxTlRNM1pUTmhOV0ptWkRFMU9UQTROV0UxWVRobE1qTmxOV0V6WWpJeVlRX1JTMjU2IiwidHlwIjoiYXQrand0IiwiYWxnIjoiUlMyNTYifQ'
 
 @app.route('/')
 def home():
@@ -67,8 +68,34 @@ def addHuesped():
     }
 
     responseHabitacionesS = requests.post('https://utpl-interoperabilidad-ejercicio1.onrender.com/v1_0/huesped', json=room_data)
-
     return redirect(url_for('huespedes'))
+
+@app.route('/vehiculos')
+def vehiculos():
+    #headers = {'apikey': API_KEY}
+    headers = {'Authorization': f'Bearer {API_TOKEN}'}
+    response = requests.get('https://utplwso2.tk/apivehiculo/1.0/vehiculos', headers=headers)
+    print(response)
+    return render_template('vehiculos.html', vehiculos=response.json())
+
+@app.route('/vehiculos', methods=['POST'])
+def addVehiculo():
+    print("Guardando vehiculo")
+    tipo = request.form.get('tipo')
+    marca = request.form.get('marca')
+    modelo = int(request.form.get('modelo'))
+    anio = request.form.get('anio')
+    color = request.form.get('color')
+    descripcion = request.form.get('descripcion')
+
+    vehiculo_data = {"tipo": tipo, "marca": marca, "modelo": modelo, "anio": anio, "color": color, "descripcion": descripcion}
+
+    #headers = {'apikey': API_KEY}
+    headers = {'Authorization': f'Bearer {API_TOKEN}'}
+    responseVehiculosS = requests.post('https://utplwso2.tk/apivehiculo/1.0/vehiculos', json=vehiculo_data, headers=headers)
+
+    return redirect(url_for('vehiculos'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
